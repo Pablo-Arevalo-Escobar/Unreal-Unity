@@ -14,6 +14,7 @@ A flappy bird clone made over a weekend using Unity and Photoshop.
 The purpose of this project was to learn the basic functionality of Unity.
 
 Controls:
+
 Jump : Space
 
 Note - Game will automatically restart 2 seconds after you die
