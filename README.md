@@ -30,7 +30,7 @@ Note - Game will automatically restart 2 seconds after you die
 
 Controls:
 
-Jump -> Space
+Space -> Jump
 
 
 Playable at: https://pablo-arevalo-escobar.github.io/Unity/
