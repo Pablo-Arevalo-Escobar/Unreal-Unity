@@ -9,9 +9,6 @@ Contents:
 
 ### Unreal Projects
 
-Projects made with Unreal
-
-
 **BattleShips** January 2023 - In Progress
 
 A battleship game being made in my free time using C++ and blueprints in Unreal Engine.
@@ -24,7 +21,6 @@ Current Screenshots:
 ![](Unreal/ScreenshotBoard.png)
 
 ### Unity Projects
-Repository for projects made with unity
 
 **Flappy Bird** January 2023
 
