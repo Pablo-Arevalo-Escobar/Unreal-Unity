@@ -13,7 +13,7 @@ Contents:
 
 A battleship game being made in my free time using C++ and blueprints in Unreal Engine.
 
-Kanban Board Progress can be viewed here:
+Kanban progress board can be viewed here:
 https://spice-clipper-260.notion.site/Battleship-3da50dd2ea974f9eb001760d1197d5e4
 
 
