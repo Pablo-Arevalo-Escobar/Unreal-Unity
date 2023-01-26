@@ -3,9 +3,9 @@ Repository for Unreal and Unity Projects.
 
 Contents:
 
-[Unreal](#unreal-projects)
+- [Unreal](#unreal-projects)
 
-[Unity](#unity-projects)
+- [Unity](#unity-projects)
 
 ### Unreal Projects
 
