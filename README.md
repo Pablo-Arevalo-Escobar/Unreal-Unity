@@ -7,6 +7,7 @@ Projects made with Unreal
 
 
 **BattleShips** January 2023 - In Progress
+
 A battleship game being made in my free time using C++ and blueprints in Unreal Engine.
 
 Kanban Board Progress can be viewed here:
