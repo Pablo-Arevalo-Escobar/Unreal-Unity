@@ -18,7 +18,7 @@ https://spice-clipper-260.notion.site/Battleship-3da50dd2ea974f9eb001760d1197d5e
 
 
 Current Screenshots:
-![](Unreal/ScreenshotBoard.png)
+![](Unreal/BattleShips.png)
 
 ## Unity Projects
 
