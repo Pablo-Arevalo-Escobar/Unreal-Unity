@@ -41,8 +41,18 @@ A simple battleship game made in my free time using C++ and blueprints in Unreal
 
 Current Screenshots:
 ![](Unreal/Images/BattleShips.png)
+
 ![](Unreal/Images/Missile.png)
+
 ![](Unreal/Images/MissileArc.png)
+
+![](Unreal/Images/BattleshipMissile.png)
+
+![](Unreal/Images/DamagedShip.png)
+
+![](Unreal/Images/SinkingShip.png)
+
+
 
 ## Unity Projects
 
