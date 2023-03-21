@@ -15,15 +15,15 @@ https://en.wikipedia.org/wiki/Boids
 
 Three key steps in the algorithm:
 
-(1) Alignment:
+1. Alignment:
 
 - Steer towards the average heading of local flockmates
 	
-(2) Separation:
+2. Separation:
 
 - Steer to avoid local flockmates
 	
-(3) Cohesion:
+3. Cohesion:
 
 - Steer to move towards the average position (center of mass) of local flockmates
 	
