@@ -3,21 +3,23 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "NavigationGrid.h"
+#include "RectangleGrid.h"
 #include "Ship.h"
 #include "BattleshipGrid.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
-class BATTLESHIP_API ABattleshipGrid : public ANavigationGrid
+class BATTLESHIP_API ABattleshipGrid : public ARectangleGrid
 {
 	GENERATED_BODY()
 
 public:
 	virtual void BeginPlay() override;
 	void MoveShip(AShip& Ship, AGridTile& DestinationTile);
+	void RotateShip(AShip& Ship, bool Clockwise);
+	void RotateAllShips(float degree);
 protected:
 	//int NumberOfSizeThreeShips = 3;
 	//int NumberOfSizeTwoShips = 2;
@@ -36,6 +38,10 @@ protected:
 
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<AShip> SizeThreeShip;
+
 private:
+	UPROPERTY(EditAnywhere)
 	float ZOffset = -50;
+	UPROPERTY(EditAnywhere)
+	float YOffset = 20;;
 };

@@ -22,14 +22,14 @@ UDELEGATE()
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnSelectedTriggerSignature, bool, IsSelected);
 
 /**
- * 
+ *
  */
 class BATTLESHIP_API ISelectable
 {
 	GENERATED_BODY()
 
-	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
+		// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Selectable")
-	void Select(bool IsSelected);
+		void Select(bool IsSelected);
 };

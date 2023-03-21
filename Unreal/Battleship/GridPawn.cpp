@@ -10,7 +10,7 @@
 // Sets default values
 AGridPawn::AGridPawn()
 {
- 	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));;
 	PlayerCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("PlayerCamera"));
@@ -21,6 +21,7 @@ AGridPawn::AGridPawn()
 void AGridPawn::BeginPlay()
 {
 	Super::BeginPlay();
+	GameManager = GetWorld()->SpawnActor<AGameManager>(GameManagerBlueprint, FVector(0, 0, 0), FRotator::ZeroRotator);
 
 }
 
@@ -37,7 +38,7 @@ void AGridPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 	//Setup Mouse Functionality
-	InputComponent->BindAction(TEXT("MouseClick"), IE_Pressed, this, &AGridPawn::OnMouseClick);
+	InputComponent->BindAction(TEXT("Select"), IE_Pressed, this, &AGridPawn::OnMouseClick);
 
 	//Setup Movement Functions
 	PlayerInputComponent->BindAxis(TEXT("MoveFB"), this, &AGridPawn::MoveFB);
@@ -46,7 +47,10 @@ void AGridPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	PlayerInputComponent->BindAxis(TEXT("MoveUD"), this, &AGridPawn::MoveUD);
 
 	//Bind Action is not functioning, Bind Axis used instead
-	PlayerInputComponent->BindAction(TEXT("ToggleMove"), IE_Pressed,this, &AGridPawn::ToggleMove);
+	PlayerInputComponent->BindAction(TEXT("ToggleMove"), IE_Pressed, this, &AGridPawn::ToggleMove);
+	PlayerInputComponent->BindAction(TEXT("RotateShipClockwise"), IE_Pressed, this, &AGridPawn::RotateShipClockwise);
+	PlayerInputComponent->BindAction(TEXT("RotateShipCounterClockwise"), IE_Pressed, this, &AGridPawn::RotateShipCounterClockwise);
+
 
 
 }
@@ -55,7 +59,7 @@ void AGridPawn::MoveFB(float Value)
 {
 	if (CanMove) {
 		auto Location = GetActorLocation();
-		Location += Value * RootComponent->GetForwardVector();		
+		Location += Value * RootComponent->GetForwardVector();
 		SetActorLocation(Location);
 	}
 }
@@ -105,12 +109,15 @@ void AGridPawn::MoveUD(float Value)
 	}
 }
 
+
+
+//Rename to select
 void AGridPawn::OnMouseClick()
 {
 	FHitResult HitResult;
 	APlayerController* PC = Cast<APlayerController>(GetController());
 	PC->GetHitResultUnderCursor(ECollisionChannel::ECC_Pawn, false, HitResult);
-	
+
 	if (Cast<ISelectable>(HitResult.GetActor())) {
 		ISelectable* SelectedActor = Cast<ISelectable>(HitResult.GetActor());
 
@@ -120,20 +127,62 @@ void AGridPawn::OnMouseClick()
 		PreviouslySelectedActor = SelectedActor;
 		SelectedActor->Execute_Select(Cast<UObject>(SelectedActor), true);
 
-		if (Cast<AGridTile>(SelectedActor))  SelectedTile = Cast<AGridTile>(SelectedActor);
+        if(GameManager->state == bGameState::PLACEMENT_STATE) {
+			PlacementSelect(SelectedActor);
+        }
+        else if(GameManager->state == bGameState::ATTACK_STATE && Cast<AGridTile>(SelectedActor)) {
+            AttackSelect(HitResult.GetActor());
+        }
+		
+
+	}
+}
+
+void AGridPawn::AttackSelect(AActor* SelectedActor) {
+	if (SelectedActor) {
+		GameManager->SetTarget(SelectedActor);
+		GameManager->FireAtTarget();
+	}
+
+}
+
+void AGridPawn::PlacementSelect(ISelectable* SelectedActor) {
+    if (Cast<AGridTile>(SelectedActor))  SelectedTile = Cast<AGridTile>(SelectedActor);
 		else if (Cast<AShip>(SelectedActor)) SelectedShip = Cast<AShip>(SelectedActor);
 
 		//Move Ship to tile if both a ship and tile are selected
 		if (Cast<AGridTile>(PreviouslySelectedActor) && SelectedTile && SelectedShip) {
-			TActorIterator<ABattleshipGrid> GridIterator(GetWorld(),ABattleshipGrid::StaticClass(), EActorIteratorFlags::AllActors);
+			TActorIterator<ABattleshipGrid> GridIterator(GetWorld(), ABattleshipGrid::StaticClass(), EActorIteratorFlags::AllActors);
 			for (GridIterator; GridIterator; ++GridIterator) {
 				// TODO::Check if Player Grid
 				GridIterator->MoveShip(*SelectedShip, *SelectedTile);
 			}
 			SelectedShip = nullptr;
 			SelectedTile = nullptr;
-		}
+	}
 
+}
+
+void AGridPawn::RotateShipClockwise()
+{
+	if (SelectedShip != nullptr) {
+		TActorIterator<ABattleshipGrid> GridIterator(GetWorld(), ABattleshipGrid::StaticClass(), EActorIteratorFlags::AllActors);
+		for (GridIterator; GridIterator; ++GridIterator) {
+			// TODO::Check if Player Grid
+			GridIterator->RotateShip(*SelectedShip, true);
+		}
+	}
+	
+}
+
+void AGridPawn::RotateShipCounterClockwise()
+{
+	if (SelectedShip != nullptr) {
+		TActorIterator<ABattleshipGrid> GridIterator(GetWorld(), ABattleshipGrid::StaticClass(), EActorIteratorFlags::AllActors);
+		for (GridIterator; GridIterator; ++GridIterator) {
+			// TODO::Check if Player Grid
+			GridIterator->RotateShip(*SelectedShip, false);
+		}
 	}
 }
 

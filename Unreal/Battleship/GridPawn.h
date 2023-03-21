@@ -8,6 +8,8 @@
 #include "Selectable.h"
 #include "GridTile.h"
 #include "Ship.h"
+#include "Battleship/GameManager.h"
+
 #include "GridPawn.generated.h"
 
 UCLASS()
@@ -23,7 +25,7 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
@@ -42,21 +44,30 @@ private:
 	//Action Bindings
 	void ToggleMove();
 	void OnMouseClick();
+	void AttackSelect(AActor* SelectedActor);
+	void PlacementSelect(ISelectable* SelectedActor);
+	void RotateShipClockwise();
+	void RotateShipCounterClockwise();
+
 
 private:
 	UPROPERTY(EditDefaultsOnly)
 	UCameraComponent* PlayerCamera;
 
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<AGameManager> GameManagerBlueprint;
+
+	AGameManager* GameManager;
 	ISelectable* PreviouslySelectedActor;
 	AShip* SelectedShip;
 	AGridTile* SelectedTile;
 
 	UPROPERTY(EditAnywhere)
-	bool CanMove = true;
+		bool CanMove = true;
 
 	UPROPERTY(EditAnywhere)
-	float MoveSpeed = 1.0f;
+		float MoveSpeed = 1.0f;
 
 	UPROPERTY(EditAnywhere)
-	float RotationSpeed = 1.0f;
+		float RotationSpeed = 1.0f;
 };

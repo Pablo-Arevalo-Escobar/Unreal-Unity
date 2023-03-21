@@ -5,6 +5,10 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "Selectable.h"
+#include "Components/BoxComponent.h"
+#include "HealthComponent.h"
+#include "GameFramework/DefaultPawn.h"
+
 #include "Ship.generated.h"
 
 UENUM()
@@ -20,8 +24,8 @@ UCLASS()
 class BATTLESHIP_API AShip : public AActor, public ISelectable
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	AShip();
 
@@ -29,11 +33,18 @@ public:
 	void Select(bool IsSelected);
 	virtual void Select_Implementation(bool Value) override;
 
+	
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+	UFUNCTION()
+		void OnComponentBeginOverlap(class UBoxComponent* Component, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnDeath();
+
+
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
@@ -45,9 +56,29 @@ private:
 	UPROPERTY(BlueprintAssignable)
 	FOnSelectedTriggerSignature OnSelectedTrigger;
 
+
 protected:
+	UPROPERTY(EditAnywhere,BlueprintReadWrite)
+		UStaticMeshComponent* StaticMesh;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
-	UStaticMeshComponent* ShipMesh;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		UBoxComponent* BoxCollision;
 
+	UPROPERTY(EditAnywhere,BlueprintReadWrite)
+		UHealthComponent* Health;
+
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		UClass* TriggerClass = ADefaultPawn::StaticClass();
+	//UPROPERTY(EditAnywhere, Category = "ModuleType")
+	//TSubclassOf<AShipModule> CoreModule;
+
+	//UPROPERTY(EditAnywhere, Category = "ModuleType")
+	//TSubclassOf<AShipModule> ExternalModule;
+
+	//UPROPERTY(EditAnywhere, Category = "ModuleType")
+	//TSubclassOf<AShipModule> InternalModule;
+
+	//UPROPERTY(EditInstanceOnly)
+	//TArray<AShipModule*> ShipModules;
 };

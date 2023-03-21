@@ -18,7 +18,7 @@ void AGridTile::BeginPlay()
     FScriptDelegate DelegateSubscriber;
     DelegateSubscriber.BindUFunction(this, "OnClicked");
     TileMesh->OnClicked.Add(DelegateSubscriber);
-    
+
 }
 
 
@@ -31,7 +31,7 @@ void AGridTile::Select_Implementation(bool IsSelected)
 void AGridTile::OnClicked(AActor* TouchedActor, FKey ButtonPressed)
 {
     //this->OnSelectedTrigger.Broadcast();
-    
+
 }
 
 

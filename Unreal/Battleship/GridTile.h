@@ -23,19 +23,19 @@ UCLASS()
 class BATTLESHIP_API AGridTile : public AActor, public ISelectable
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	AGridTile();
 	virtual void BeginPlay() override;
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-	void Select(bool IsSelected); 
+		void Select(bool IsSelected);
 	virtual void Select_Implementation(bool Value) override;
 
 protected:
 	UFUNCTION()
-	void OnClicked(AActor* TouchedActor, FKey ButtonPressed);
+		void OnClicked(AActor* TouchedActor, FKey ButtonPressed);
 
 public:
 	virtual void Tick(float DeltaTime) override;
