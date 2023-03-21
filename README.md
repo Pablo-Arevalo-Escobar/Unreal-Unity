@@ -18,6 +18,15 @@ Three key steps in the algorithm:
 (1) Alignment:
 
 	-			Steer towards the average heading of local flockmates
+				AveragePosition = FVector::ZeroVector;
+				AverageHeading = FVector::ZeroVector;
+				for (int i = 0; i < NumberOfBoids; ++i) {
+					AverageHeading += DirectionVectors[i];
+					InstancedMesh->GetInstanceTransform(i, *InstanceTransform);
+					AveragePosition += InstanceTransform->GetLocation();
+				}
+				AverageHeading /= NumberOfBoids;
+				AveragePosition /= NumberOfBoids;
 	
 (2) Separation:
 
