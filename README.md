@@ -9,12 +9,28 @@ Repository for Unreal and Unity Projects.
 
 ## Unreal Projects
 
-### **BattleShips** January 2023 - In Progress
+### **Boids** 
+A C++ Unreal implementation of simple boid behaviour based on the principles described by the following wikipedia page:
+https://en.wikipedia.org/wiki/Boids
 
-A battleship game being made in my free time using C++ and blueprints in Unreal Engine.
+Three key steps in the algorithm:
 
-Kanban progress board can be viewed here:
-https://spice-clipper-260.notion.site/Battleship-3da50dd2ea974f9eb001760d1197d5e4
+(1) Alignment:
+	*			Steer towards the average heading of local flockmates
+(2) Separation:
+	*			Steer to avoid local flockmates
+(3) Cohesion:
+	*			Steer to move towards the average position (center of mass) of local flockmates
+  
+Current Screenshots:
+
+![](Unreal/Boid3D.png)
+![](Unreal/Boid2D.png)
+![](Unreal/BoidParam.png)
+
+### **BattleShips** January 2023
+
+A simple battleship game made in my free time using C++ and blueprints in Unreal Engine.
 
 
 Current Screenshots:
