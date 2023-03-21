@@ -30,8 +30,8 @@ Three key steps in the algorithm:
   
 Current Screenshots:
 
-![](Unreal/Boid3D.png)
-![](Unreal/Boid2D.png)
+![](Unreal/Images/Boid1.png)
+![](Unreal/Images/Boid2.png)
 ![](Unreal/BoidParam.png)
 
 ### **BattleShips** January 2023
