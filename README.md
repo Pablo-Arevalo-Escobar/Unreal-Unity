@@ -17,15 +17,15 @@ Three key steps in the algorithm:
 
 (1) Alignment:
 
-	-			Steer towards the average heading of local flockmates
+- Steer towards the average heading of local flockmates
 	
 (2) Separation:
 
-	-			Steer to avoid local flockmates
+- Steer to avoid local flockmates
 	
 (3) Cohesion:
 
-	-			Steer to move towards the average position (center of mass) of local flockmates
+- Steer to move towards the average position (center of mass) of local flockmates
 	
   
 Current Screenshots:
