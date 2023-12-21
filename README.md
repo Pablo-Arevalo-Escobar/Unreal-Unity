@@ -9,6 +9,14 @@ Repository for Unreal and Unity Projects.
 
 ## Unreal Projects
 
+- [Bloxorz](#bloxorz)
+  
+- [Cosmic Horror](#untitled-cosmic-horror-game)
+
+- [Boids](#boids)
+
+- [Battleship](#battleships)
+
 # Bloxorz
 A modern reimagining of the web classic Bloxorz. 
 The game is made using Unreal Engine, the programming is done almost entirely in Unreal's flavour of C++ apart from certain UI related functionality.
@@ -95,6 +103,24 @@ Cross switches:
 The amount of moves the player makes in each level is stored and used to calculate their overall score at the end (score feature is not yet implemented).
 
 If the player falls, then the move count is reset to whatever it was at the beginning of the level.
+
+# Untitled Cosmic Horror Game
+An experiment in capturing the horror atmosphere.
+
+## Images
+
+### Lab 
+![computer_lighting](https://github.com/Pablo-Arevalo-Escobar/Unreal-Unity/assets/63361048/4c1b5fe9-535f-4639-b371-b1e97d1bf29e)
+
+### Outdoors
+![forest](https://github.com/Pablo-Arevalo-Escobar/Unreal-Unity/assets/63361048/abc22b8f-a39b-4433-9d04-1090dcf213e7)
+
+
+### Observatory
+![observatory](https://github.com/Pablo-Arevalo-Escobar/Unreal-Unity/assets/63361048/03588e37-3768-4e79-888a-16d13440d34b)
+
+### Notes
+![journal](https://github.com/Pablo-Arevalo-Escobar/Unreal-Unity/assets/63361048/fb369886-b186-495a-9a07-813afa1b03c5)
 
 
 # **Boids** 
