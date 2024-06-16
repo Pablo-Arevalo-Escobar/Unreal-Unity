@@ -8,6 +8,7 @@ Repository for Unreal and Unity Projects.
 - [Unity](#unity-projects)
 
 ## Unreal Projects
+- [Marching Squares](#marching-squares)
 
 - [Bloxorz](#bloxorz)
   
@@ -16,6 +17,21 @@ Repository for Unreal and Unity Projects.
 - [Boids](#boids)
 
 - [Battleship](#battleships)
+
+
+# Marching Squares
+Implementation of the marching squares algorithm using Unreal's procedural mesh component. The programming is done entirely in Unreal's flavour of C++.
+
+### Grid, Case Numbers, and Outline
+![GridAndLines](https://github.com/Pablo-Arevalo-Escobar/Unreal-Unity/assets/63361048/4aebece3-47d9-4d92-95bf-5c0c0f3f542f)
+### Zoomed In
+![GridZoom](https://github.com/Pablo-Arevalo-Escobar/Unreal-Unity/assets/63361048/d4760f67-7db7-416e-80b1-f2842aa0dd48)
+### Rendering the squares with height and grid
+![SquaresWithGrid](https://github.com/Pablo-Arevalo-Escobar/Unreal-Unity/assets/63361048/4925b9d1-fcdd-4dc5-8ef0-539912b6dbc3)
+#### Rendering the squares with height and no grid
+![NoGrid](https://github.com/Pablo-Arevalo-Escobar/Unreal-Unity/assets/63361048/35bfa98b-b9b0-4cca-8b2d-36fb3a6d9a65)
+
+
 
 # Bloxorz
 A modern reimagining of the web classic Bloxorz. 
