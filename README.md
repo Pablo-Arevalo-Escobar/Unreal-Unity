@@ -21,6 +21,8 @@ Repository for Unreal and Unity Projects.
 
 # Marching Squares
 Implementation of the marching squares algorithm using Unreal's procedural mesh component. The programming is done entirely in Unreal's flavour of C++.
+The implementation is based on the following wikipedia article:
+https://en.wikipedia.org/wiki/Marching_squares
 
 ### Grid, Case Numbers, and Outline
 ![GridAndLines](https://github.com/Pablo-Arevalo-Escobar/Unreal-Unity/assets/63361048/4aebece3-47d9-4d92-95bf-5c0c0f3f542f)
