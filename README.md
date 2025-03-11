@@ -52,24 +52,22 @@ The game is made using Unreal Engine, the programming is done almost entirely in
 
 ### Game Footage
 
-https://github.com/Pablo-Arevalo-Escobar/Bloxorz/assets/63361048/37236d8a-9e62-4840-995d-06bab127583f
+https://github.com/user-attachments/assets/a7e45e8b-30cc-44f2-b51b-4bfae915a49f
+
+https://github.com/user-attachments/assets/c14efa24-0d0a-4df6-ae18-8e91db46c0e6
+
+https://github.com/Pablo-Arevalo-Escobar/Bloxorz/assets/63361048/30a90905-79e0-418d-bc82-54e21d781167
 
 ### Level Editor Footage
+#### Tile viewer
 
-https://github.com/Pablo-Arevalo-Escobar/Bloxorz/assets/63361048/8e2c1627-5d69-4e8c-8eb3-275ebb07f7f4
+
+https://github.com/user-attachments/assets/8d5f750d-7444-4d5f-90f7-8d61016a290a
 
 
-## Images
+#### Linking buttons to bridges/tiles
 
-### Level Examples
-
-![BloxSplash](https://github.com/Pablo-Arevalo-Escobar/Bloxorz/assets/63361048/938df394-d516-4d10-a065-95dfa4d4aaa0)
-
-![BoxSplash2](https://github.com/Pablo-Arevalo-Escobar/Bloxorz/assets/63361048/a537541d-39fd-40d9-9731-2c89e095232a)
-
-### SFX
-
-![BloxLighting](https://github.com/Pablo-Arevalo-Escobar/Bloxorz/assets/63361048/10e15b0b-0f12-4d81-8024-08c27383cecc)
+https://github.com/user-attachments/assets/fde1d361-5323-48c8-920c-29b1d175bb80
 
 
 ## Controls
