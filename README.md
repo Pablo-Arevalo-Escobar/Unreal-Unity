@@ -52,11 +52,27 @@ The game is made using Unreal Engine, the programming is done almost entirely in
 
 ### Game Footage
 
+#### Snow Effects 
+
 https://github.com/user-attachments/assets/a7e45e8b-30cc-44f2-b51b-4bfae915a49f
+
+
 
 https://github.com/user-attachments/assets/c14efa24-0d0a-4df6-ae18-8e91db46c0e6
 
+#### Base Game
+
+https://github.com/user-attachments/assets/3c99aa8a-fd3e-471a-b495-94c91cda2486
+
+
 https://github.com/Pablo-Arevalo-Escobar/Bloxorz/assets/63361048/30a90905-79e0-418d-bc82-54e21d781167
+
+
+https://github.com/user-attachments/assets/7201f9f7-24b4-4714-b50d-1a1d08d79b85
+
+
+
+https://github.com/Pablo-Arevalo-Escobar/Bloxorz/assets/63361048/bb1679ac-1ba1-4b85-b69b-e55a759f361e
 
 ### Level Editor Footage
 #### Tile viewer
